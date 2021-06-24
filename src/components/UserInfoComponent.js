@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 
 const UserInfo = (props) => {
+    let mailto = `mailto:${props.userInfo.email}`
     return (
         <section className="userInfo row">
             <div className="col-xs-12 col-lg-4">
@@ -9,9 +10,9 @@ const UserInfo = (props) => {
                         <Card.Title>Contact Info</Card.Title>
                         <Card.Text>
                             <div> <b>Username :</b> {props.userInfo.username}</div>
-                            <div> <b>Email :</b> <a>{props.userInfo.email}</a></div>
-                            <div> <b>Phone :</b> <a>{props.userInfo.phone}</a></div>
-                            <div> <b>Website :</b> <a>{props.userInfo.website}</a></div>
+                            <div> <b>Email :</b> <a href={mailto}>{props.userInfo.email}</a></div>
+                            <div> <b>Phone :</b> <a href={`tel:${props.userInfo.phone}`}>{props.userInfo.phone}</a></div>
+                            <div> <b>Website :</b> <a href={"http://" + props.userInfo.website} target="_blank">{props.userInfo.website}</a></div>
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -38,7 +39,7 @@ const UserInfo = (props) => {
                     </Card.Body>
                 </Card>
             </div>
-        </section>)
+        </section >)
 }
 
 export default UserInfo;
