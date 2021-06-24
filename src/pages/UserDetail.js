@@ -20,7 +20,7 @@ const UserDetail = () => {
     useEffect(async () => {
 
 
-        const userDetails = await axios.get(`http://jsonplaceholder.typicode.com/users/${id}`);
+        const userDetails = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
         const user = {
             name: userDetails.data.name,
             email: userDetails.data.email,
@@ -32,7 +32,7 @@ const UserDetail = () => {
         setAddInfo(userDetails.data.address);
         setCompanyInfo(userDetails.data.company);
 
-        const postDetails = await axios.get(`http://jsonplaceholder.typicode.com/posts?userId=${id}`)
+        const postDetails = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
         setUserPosts(postDetails.data)
 
     }, [])

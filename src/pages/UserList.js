@@ -13,7 +13,7 @@ const UserList = () => {
 
     useEffect(() => {
 
-        axios.get(`http://jsonplaceholder.typicode.com/users`).then((response) => {
+        axios.get(`https://jsonplaceholder.typicode.com/users`).then((response) => {
             console.log(response);
             setUserData(response.data);
             setFilterData(response.data);
